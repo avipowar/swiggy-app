@@ -20,3 +20,5 @@ Swiggy-app
     - Company
     - Copyright
     - Contact us
+
+- Install Tailwind css for style my react component
