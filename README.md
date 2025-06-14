@@ -27,3 +27,13 @@ Swiggy-app
 - Make a Header
 - Make a card container using flex property
 - use swiggy live data
+
+- Create utils folder to add my hard coded data or string
+
+- I learn new thing which is two types of import and export files
+  - First is default import and export
+    - export default components
+    - import components "path"
+  - Second is named import and export
+    - export const components
+    - import {components} "path"
