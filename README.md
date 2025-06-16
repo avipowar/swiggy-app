@@ -37,3 +37,14 @@ Swiggy-app
   - Second is named import and export
     - export const components
     - import {components} "path"
+
+# Hooks in react
+
+- useState() - superpowerfull variable in react
+- useEffect() - use for api call
+
+- Hook is normal js function its give a react state (superpowerfull) variable
+- Whenever state variable is update my component will be re-render
+
+- I make search btn to apply useState concept
+- This search btn filter top rated restaurants
