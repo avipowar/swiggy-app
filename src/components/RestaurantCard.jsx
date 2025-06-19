@@ -16,7 +16,9 @@ const RestaurantCard = (props) => {
           className="h-40 w-60  rounded-2xl"
         />
         <div className="p-3 w-60">
-          <h3 className="text-xl font-bold">{name}</h3>
+          <h3 className="text-xl font-bold truncate overflow-hidden  whitespace-nowrap  ">
+            {name}
+          </h3>
           <h3 className="flex items-center gap-2 text-sm text-[#282c3f] font-medium">
             <img
               src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSokvLLBOHLxXQqxAnbEb5VEQKK8rzhSNwXrT-Tgkur0eYfaqPfr_U1ErWRGtwT1e-SnLE&usqp=CAU"
