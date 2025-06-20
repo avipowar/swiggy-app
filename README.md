@@ -52,3 +52,6 @@ Swiggy-app
 - I use useEffect to get data from api
 - Now I use swiggy Live api
 - I add shimmer ui in my website for user get better experience
+
+- I make login logout btn using useState.
+- And understand how the useState Work.
