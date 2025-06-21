@@ -55,3 +55,5 @@ Swiggy-app
 
 - I make login logout btn using useState.
 - And understand how the useState Work.
+
+- I make search functionality here to search any restaurants
