@@ -80,3 +80,24 @@ Swiggy-app
 
 - using this {UseRouterError} hook it is given the more information about the error
 - whenever you see a function starts with {use} that means it is hook
+
+# How to create children routes (Outlet)
+
+- we create children route using a list
+- and this list give a configuration
+- and theses configuration is list of object
+- and i use outlet component for add the children in route
+- and these outlet is given by react-router-dom
+
+# Link
+
+- why use Link component because when use anchor tag page is reload
+- but use Link page is not be reload
+- and this single page application also
+
+# Two types of routing in web pages
+
+- clint side routing
+  - in clint side routing page is not be reload
+- server side routing
+  - in server side routing use anchor tag page is reload
