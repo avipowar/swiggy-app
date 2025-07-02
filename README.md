@@ -57,3 +57,26 @@ Swiggy-app
 - And understand how the useState Work.
 
 - I make search functionality here to search any restaurants
+
+# I Learn More About UseEffect
+
+- so we have to do something after rendering the component . then you put inside useEffect
+- useEffect is take two argument first is callback function and second is dependency array.
+- if you don't pass dependency array then it will run after every render
+- if you pass dependency array then it will run after every change in dependency array
+- if you pass empty dependency array then it will run only once
+
+# routing (react-router-dom)
+
+- we create routing in our project for that we use react-router-dom
+- first install react router dom in my project
+- when you create routing we have to create some configuration
+- for that i will import {createBrowserRouter} from react-router-dom
+- {createBrowserRouter} create a routing configuration for us
+- {createBrowserRouter} take list of object
+- each object is define two things first is path and second is what should be happened on that path
+
+# UseRouterError
+
+- using this {UseRouterError} hook it is given the more information about the error
+- whenever you see a function starts with {use} that means it is hook
