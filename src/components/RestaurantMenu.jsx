@@ -37,8 +37,18 @@ const RestaurantMenu = () => {
   const { minDeliveryTime, maxDeliveryTime } =
     resInfo?.data?.cards[2]?.card?.card?.info?.sla;
 
+  // menu destructed
+  console.log(
+    resInfo?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card
+      ?.card
+  );
+
+  const { title, itemCards } =
+    resInfo?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card
+      ?.card;
+
   return (
-    <div className="flex justify-center p-8 w-full">
+    <div className="flex  justify-center p-8 w-full">
       <div className="w-[65%]">
         <h1 className="font-bold text-4xl">{name}</h1>
         {/* div men menu */}
@@ -77,9 +87,22 @@ const RestaurantMenu = () => {
             </div>
           </div>
         </div>
+        <div className="border border-gray-300 mt-10"></div>
+        {/* menu section */}
+        <h1 className="font-bold text-2xl mt-3">{title}</h1>
+        <div className="">
+          <ul className="list-disc  px-10 py-4">
+            {itemCards.map((item) => (
+              <li
+                key={item?.card?.info?.id}
+                className="text-lg font-semibold text-gray-700 "
+              >
+                {item?.card?.info?.name}
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
-
-      {/* menu are there are */}
     </div>
   );
 };
