@@ -76,7 +76,7 @@ Swiggy-app
 - {createBrowserRouter} take list of object
 - each object is define two things first is path and second is what should be happened on that path
 
-# UseRouterError
+# UseRouterError Hook
 
 - using this {UseRouterError} hook it is given the more information about the error
 - whenever you see a function starts with {use} that means it is hook
@@ -101,3 +101,11 @@ Swiggy-app
   - in clint side routing page is not be reload
 - server side routing
   - in server side routing use anchor tag page is reload
+
+# What is dynamic routing (UseParam Hook)
+
+- tou have to created dynamic routes you use /: this
+- its define the. this path is dynamic
+- and you want read the resId in your URL path then we use USEPARM hook
+- which is given by react-router-dom
+- and you read the pathId easily and make api call dynamically
