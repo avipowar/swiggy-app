@@ -109,3 +109,8 @@ Swiggy-app
 - and you want read the resId in your URL path then we use USEPARM hook
 - which is given by react-router-dom
 - and you read the pathId easily and make api call dynamically
+
+# Create own custom hook (useRestaurantsMenu)
+
+- this hook name is useRestaurantsMenu
+- and this work is fetch the data and give the restaurants info
