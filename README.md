@@ -121,3 +121,10 @@ Swiggy-app
 
 - This hook is display the user is online or offline
 - and this is give you good user experience to user
+
+# Lazy Loading...
+
+- lazy loading is a technique to load the component on demand
+- and this is optimize the performance of the application
+- and this is also reduce the bundle size of the application
+- and this is also reduce the time of the application to load
