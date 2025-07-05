@@ -1,4 +1,7 @@
-import React, { useEffect, useState } from "react";
+/* eslint-disable no-undef */
+/* eslint-disable no-unsafe-optional-chaining */
+
+import React, { useEffect } from "react";
 import Shimmer from "./Shimmer";
 import { useParams } from "react-router-dom";
 import { MENU_URL } from "../utils/constants";
@@ -47,7 +50,7 @@ const RestaurantMenu = () => {
       <div className="w-[65%]">
         <h1 className="font-bold text-4xl">{name}</h1>
         {/* div men menu */}
-        <div className="border border-gray-400 rounded-2xl mt-5 p-6 ml-2 shadow-md mt-10">
+        <div className="border border-gray-400 rounded-2xl  p-6 ml-2 shadow-md mt-10">
           <div className="flex gap-2">
             <img
               src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJ3SK25amB1wZlnisCPy-DifGYIZL_JthwvA&s"
@@ -90,7 +93,7 @@ const RestaurantMenu = () => {
             {itemCards.map((item) => (
               <li
                 key={item?.card?.info?.id}
-                className="text-lg font-semibold text-gray-700 "
+                className="text-lg font-semibold text-gray-700"
               >
                 {item?.card?.info?.name}
               </li>

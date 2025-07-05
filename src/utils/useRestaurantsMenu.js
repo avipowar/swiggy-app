@@ -2,10 +2,11 @@ import { useEffect, useState } from "react";
 import { MENU_URL } from "./constants";
 
 const useRestaurantsMenu = (resId) => {
-  const [resInfo, setResInfo] = useState(null);
+  const [resInfo, setResInfo] = useState();
 
   useEffect(() => {
     fetchMenu();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const fetchMenu = async () => {
@@ -17,5 +18,4 @@ const useRestaurantsMenu = (resId) => {
   };
   return resInfo;
 };
-
 export default useRestaurantsMenu;

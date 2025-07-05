@@ -114,3 +114,10 @@ Swiggy-app
 
 - this hook name is useRestaurantsMenu
 - and this work is fetch the data and give the restaurants info
+- and this hook is created because its optimize my code a lot
+- and now my component is a job of single responsibility
+
+# create one more hook (useOnlineStatus)
+
+- This hook is display the user is online or offline
+- and this is give you good user experience to user

@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import { LOGO_URL } from "../utils/constants";
 import { Link } from "react-router-dom";
+import useOnlineStatus from "../utils/useOnlineStatus";
 
 const Header = () => {
   const [loginBtn, setLoginBtn] = useState("Login");
-
+  const userIsOnline = useOnlineStatus();
   return (
     <div className="header flex shadow-md px-5">
       <div className="app-logo mr-auto">
@@ -12,6 +13,21 @@ const Header = () => {
       </div>
       <div className="my-7">
         <ul className="flex text-lg font-medium text-grey-400">
+          <li className="mr-6">
+            {" "}
+            <h1>
+              Online-Status:{" "}
+              <span
+                className={
+                  userIsOnline
+                    ? "text-green-600 text-sm"
+                    : "text-red-600 text-sm"
+                }
+              >
+                {userIsOnline ? "🟢 Online" : "🔴 Offline"}
+              </span>
+            </h1>
+          </li>
           <li className="mr-7">
             <a href="/">Home</a>
           </li>

@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import { RESTAURANT_INFO_URL } from "../utils/constants";
+import useOnlineStatus from "../utils/useOnlineStatus";
 
 const Body = () => {
   const [listOfRestaurants, setListOfRestaurants] = useState([]);
@@ -26,6 +27,22 @@ const Body = () => {
       json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
   };
+
+  // check user is online or offline
+
+  const useIsOnline = useOnlineStatus();
+
+  console.log(useIsOnline);
+
+  if (useIsOnline === false) {
+    return (
+      <div className="flex justify-center items-center mt-30">
+        <div className="w-1/2 bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded text-center">
+          ⚠️ You are currently offline. Some features may not be available.
+        </div>
+      </div>
+    );
+  }
 
   if (listOfRestaurants.length === 0) {
     return <Shimmer />;
