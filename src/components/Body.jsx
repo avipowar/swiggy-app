@@ -32,7 +32,7 @@ const Body = () => {
 
   const useIsOnline = useOnlineStatus();
 
-  console.log(useIsOnline);
+  // console.log(useIsOnline);
 
   if (useIsOnline === false) {
     return (

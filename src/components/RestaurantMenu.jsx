@@ -6,22 +6,19 @@ import Shimmer from "./Shimmer";
 import { useParams } from "react-router-dom";
 import { MENU_URL } from "../utils/constants";
 import useRestaurantsMenu from "../utils/useRestaurantsMenu";
+import DisplayCategory from "./DisplayCategory";
 
 const RestaurantMenu = () => {
-  useEffect(() => {
-    fetchMenu();
-  }, []);
-
   // see the id in url and give it
   const { resId } = useParams();
 
   const resInfo = useRestaurantsMenu(resId);
+  // console.log(resInfo);
 
   if (resInfo === null) {
     return <Shimmer />;
   }
 
-  // console.log(resInfo);
   const {
     name,
     avgRatingString,
@@ -35,15 +32,18 @@ const RestaurantMenu = () => {
   const { minDeliveryTime, maxDeliveryTime } =
     resInfo?.data?.cards[2]?.card?.card?.info?.sla;
 
-  // menu destructed
-  console.log(
-    resInfo?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card
-      ?.card
-  );
+  // console.log(
+  //   resInfo?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards
+  // );
 
-  const { title, itemCards } =
-    resInfo?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card
-      ?.card;
+  const displayCategorys =
+    resInfo?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter(
+      (c) =>
+        c.card.card?.["@type"] ===
+        "type.googleapis.com/swiggy.presentation.food.v2.NestedItemCategory"
+    );
+
+  // console.log(c);
 
   return (
     <div className="flex  justify-center p-8 w-full">
@@ -87,19 +87,9 @@ const RestaurantMenu = () => {
         </div>
         <div className="border border-gray-300 mt-10"></div>
         {/* menu section */}
-        <h1 className="font-bold text-2xl mt-3">{title}</h1>
-        <div className="">
-          <ul className="list-disc  px-10 py-4">
-            {itemCards.map((item) => (
-              <li
-                key={item?.card?.info?.id}
-                className="text-lg font-semibold text-gray-700"
-              >
-                {item?.card?.info?.name}
-              </li>
-            ))}
-          </ul>
-        </div>
+        {displayCategorys.map((c, index) => (
+          <DisplayCategory key={index} data={c.card.card} />
+        ))}
       </div>
     </div>
   );

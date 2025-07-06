@@ -4,7 +4,7 @@ import Body from "./components/Body";
 import { createBrowserRouter } from "react-router-dom";
 import About from "./components/About";
 import Contact from "./components/Contact";
-import Error from "./components/Error";
+// import Error from "./components/Error";
 import { Outlet } from "react-router-dom";
 import RestaurantMenu from "./components/RestaurantMenu";
 // import Grocery from "./components/Grocery";
@@ -55,7 +55,6 @@ export const appRouter = createBrowserRouter([
         element: <RestaurantMenu />,
       },
     ],
-    errorElement: <Error />,
   },
 ]);
 
