@@ -1,6 +1,5 @@
-/* eslint-disable no-undef */
 /* eslint-disable no-unsafe-optional-chaining */
-
+// eslint-disable-next-line no-unused-vars
 import React, { useEffect } from "react";
 import Shimmer from "./Shimmer";
 import { useParams } from "react-router-dom";
@@ -43,7 +42,7 @@ const RestaurantMenu = () => {
         "type.googleapis.com/swiggy.presentation.food.v2.NestedItemCategory"
     );
 
-  // console.log(c);
+  // console.log(displayCategorys);
 
   return (
     <div className="flex  justify-center p-8 w-full">

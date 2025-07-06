@@ -2,10 +2,12 @@ import React from "react";
 import CategoryList from "./CategoryList";
 
 const DisplayCategory = ({ data }) => {
-  //   console.log(data);
+  // console.log(data);
 
   const categoryList = data?.categories;
   //   console.log(categoryList);
+  const itemList = data?.categories;
+  // console.log(itemList);
 
   return (
     <div className="mt-8">

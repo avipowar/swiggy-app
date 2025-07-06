@@ -1,7 +1,9 @@
 import React from "react";
+import ItemList from "./ItemList";
 
 const CategoryList = ({ data, className }) => {
-  console.log(data);
+  // console.log(data.itemCards);
+  const itemList = data?.itemCards;
   //   header
   return (
     <div className={className}>
@@ -13,7 +15,9 @@ const CategoryList = ({ data, className }) => {
       </div>
       {/* body */}
       <div>
-        <h1>ainsh</h1>
+        {itemList.map((item, index) => (
+          <ItemList key={index} data={item?.card} />
+        ))}
       </div>
     </div>
   );
