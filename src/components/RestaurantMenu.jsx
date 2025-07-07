@@ -31,15 +31,13 @@ const RestaurantMenu = () => {
   const { minDeliveryTime, maxDeliveryTime } =
     resInfo?.data?.cards[2]?.card?.card?.info?.sla;
 
-  // console.log(
-  //   resInfo?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards
-  // );
+  // console.log(resInfo);
 
   const displayCategorys =
     resInfo?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter(
       (c) =>
         c.card.card?.["@type"] ===
-        "type.googleapis.com/swiggy.presentation.food.v2.NestedItemCategory"
+        "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
     );
 
   // console.log(displayCategorys);
@@ -86,9 +84,12 @@ const RestaurantMenu = () => {
         </div>
         <div className="border border-gray-300 mt-10"></div>
         {/* menu section */}
-        {displayCategorys.map((c, index) => (
-          <DisplayCategory key={index} data={c.card.card} />
-        ))}
+        {displayCategorys.map(
+          (c, index) => {
+            return <DisplayCategory key={index} data={c.card.card} />;
+          }
+          // console.log(c.card.card.itemCards)
+        )}
       </div>
     </div>
   );
