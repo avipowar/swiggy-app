@@ -128,3 +128,10 @@ Swiggy-app
 - and this is optimize the performance of the application
 - and this is also reduce the bundle size of the application
 - and this is also reduce the time of the application to load
+
+# make accordion
+
+# letting the state up
+
+- how to controlled child from parent
+- learn controlled component and uncontrolled component
