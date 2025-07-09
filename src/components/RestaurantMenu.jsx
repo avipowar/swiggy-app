@@ -1,6 +1,6 @@
 /* eslint-disable no-unsafe-optional-chaining */
 // eslint-disable-next-line no-unused-vars
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
 import { useParams } from "react-router-dom";
 import { MENU_URL } from "../utils/constants";
@@ -13,6 +13,9 @@ const RestaurantMenu = () => {
 
   const resInfo = useRestaurantsMenu(resId);
   // console.log(resInfo);
+
+  // controlling children from my parent
+  const [showIndex, setShowIndex] = useState(null);
 
   if (resInfo === null) {
     return <Shimmer />;
@@ -86,7 +89,14 @@ const RestaurantMenu = () => {
         {/* menu section */}
         {displayCategorys.map(
           (c, index) => {
-            return <DisplayCategory key={index} data={c.card.card} />;
+            return (
+              <DisplayCategory
+                key={index}
+                data={c.card.card}
+                showItem={index === showIndex ? true : false}
+                setShowIndex={() => setShowIndex(index)}
+              />
+            );
           }
           // console.log(c.card.card.itemCards)
         )}

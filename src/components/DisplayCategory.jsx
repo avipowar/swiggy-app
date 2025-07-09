@@ -1,35 +1,29 @@
 import React, { useState } from "react";
 import CategoryList from "./CategoryList";
 
-const DisplayCategory = (props) => {
-  const { data } = props;
-  // console.log(data);
+const DisplayCategory = ({ data, showItem, setShowIndex }) => {
   const { title, itemCards } = data;
   const itemList = data.itemCards;
-  // console.log(itemList);
-
-  const [shwoItem, setShowItem] = useState(false);
 
   const handleClick = () => {
-    console.log("clicked");
-    setShowItem(!shwoItem);
+    setShowIndex();
   };
 
   return (
     <div className="mt-8">
       <div className="border-b-1 border-b-gray-300">
         {/* {header} */}
-        <div className="flex justify-between">
-          <h1
-            className="mb-7 text-xl font-bold cursor-pointer"
-            onClick={handleClick}
-          >
+        <div
+          className="flex justify-between cursor-pointer"
+          onClick={handleClick}
+        >
+          <h1 className="mb-7 text-xl font-bold ">
             {title} ({itemCards.length})
           </h1>
           <span className="mr-5">⬇️</span>
         </div>
 
-        {shwoItem &&
+        {showItem &&
           itemList.map((c, index) => (
             <CategoryList
               className={`pb-4 ${
