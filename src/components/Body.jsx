@@ -1,15 +1,20 @@
-import React from "react";
+import React, { useContext } from "react";
 import RestaurantCard from "./RestaurantCard";
 import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import { RESTAURANT_INFO_URL } from "../utils/constants";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import UserContext from "../utils/UserContext";
+// UserContext
 
 const Body = () => {
   const [listOfRestaurants, setListOfRestaurants] = useState([]);
   const [filteredList, setFilteredList] = useState([]);
   const [searchRestaurant, setSearchRestaurant] = useState("");
+
+  const { loggedUser, setUserName } = useContext(UserContext);
+  // console.log(data);
 
   useEffect(() => {
     fetchData();
@@ -90,6 +95,17 @@ const Body = () => {
             Looking for top-rated restaurants? Click here
           </button>
         </div>
+      </div>
+
+      <div>
+        <input
+          type="text"
+          value={loggedUser}
+          className="border border-black p-2 m-4"
+          onChange={(e) => {
+            setUserName(e.target.value);
+          }}
+        />
       </div>
 
       <div className="RestaurantContainer flex flex-wrap gap-8 w-100%">

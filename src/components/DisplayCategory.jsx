@@ -1,5 +1,5 @@
-import React, { useState } from "react";
 import CategoryList from "./CategoryList";
+import React from "react";
 
 const DisplayCategory = ({ data, showItem, setShowIndex }) => {
   const { title, itemCards } = data;

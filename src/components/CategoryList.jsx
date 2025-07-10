@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React from "react";
 import ItemList from "./ItemList";
 import { ORDER_URL } from "../utils/constants";
@@ -5,6 +6,7 @@ import { ORDER_URL } from "../utils/constants";
 const CategoryList = ({ data, className }) => {
   // console.log(data.card.info.offerTags[0]);
   // const { subTitle, title } = data.card.info.offerTags[0];
+  // eslint-disable-next-line no-unsafe-optional-chaining
   const { name, price, defaultPrice, description, imageId } = data?.card?.info;
   return (
     <div className="border-b-1 flex justify-between border-b-gray-300 w-full mb-3 mt-3">

@@ -135,3 +135,14 @@ Swiggy-app
 
 - how to controlled child from parent
 - learn controlled component and uncontrolled component
+
+# userContext
+
+- how to share the data between the component
+- so for that we use context
+- how to create context
+- we create context using createContext which given by react library
+- and we use useContext hook to use the context in our component
+- and we use Provider to wrap the context in our application
+- this provider to help use to update or overRide the value of userContext
+- and we cas pass the value we want in provider value={}
