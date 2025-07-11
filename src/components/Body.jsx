@@ -97,11 +97,12 @@ const Body = () => {
         </div>
       </div>
 
-      <div>
+      <div className="m-6 flex justify-center">
+        <h1 className="font-bold mt-2 mr-2">Logged-User-Name:</h1>
         <input
           type="text"
           value={loggedUser}
-          className="border border-black p-2 m-4"
+          className="border border-gray-500 font-semibold py-2 px-3 rounded-md  cursor-pointer w-50 outline-none"
           onChange={(e) => {
             setUserName(e.target.value);
           }}

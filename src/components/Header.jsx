@@ -3,6 +3,7 @@ import { LOGO_URL } from "../utils/constants";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
 import UserContext from "../utils/UserContext";
+import { useSelector } from "react-redux";
 
 const Header = () => {
   const [loginBtn, setLoginBtn] = useState("Login");
@@ -11,10 +12,17 @@ const Header = () => {
   const { loggedUser } = useContext(UserContext);
   // console.log(loggedUser);
 
+  // subscribing the store
+  const items = useSelector((state) => state.cart.items);
+
+  // console.log(items);
+
   return (
     <div className="header flex shadow-md px-5">
-      <div className="app-logo mr-auto">
-        <img src={LOGO_URL} alt="app-logo" className="w-20" />
+      <div className="app-logo mr-auto cursor-pointer">
+        <Link to={"/"}>
+          <img src={LOGO_URL} alt="app-logo" className="w-20" />
+        </Link>
       </div>
       <div className="my-7">
         <ul className="flex text-lg font-medium text-grey-400">
@@ -34,7 +42,7 @@ const Header = () => {
             </h1>
           </li>
           <li className="mr-7">
-            <a href="/">Home</a>
+            <Link to="/">Home</Link>
           </li>
           <li className="mr-7">
             <Link to="/about">About Us</Link>
@@ -45,7 +53,7 @@ const Header = () => {
           <li className="mr-7">
             <Link to="/grocery">Grocery-App</Link>
           </li>
-          <li className="mr-7">Cart</li>
+          <li className="mr-7 font-bold">Cart ({items.length} - Items)</li>
           <li>
             <button
               className="bg-gray-800 hover:bg-gray-900 text-white font-semibold py-1 px-4 rounded-lg shadow-md transition duration-300 ease-in-out cursor-pointer"

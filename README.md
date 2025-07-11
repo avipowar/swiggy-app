@@ -146,3 +146,13 @@ Swiggy-app
 - and we use Provider to wrap the context in our application
 - this provider to help use to update or overRide the value of userContext
 - and we cas pass the value we want in provider value={}
+
+# Redux
+
+- Redux store is nothing but ist big whole object
+- We have install the redux in to your project. you get two library
+  - 1. @reduxjs/Toolkit
+  - 2. react-redux
+- Then provide store to our application
+- using PROVIDER we provide store to our application
+- We create logical separation and we will make small slices inside your redux-store

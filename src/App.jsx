@@ -8,6 +8,8 @@ import Contact from "./components/Contact";
 import { Outlet } from "react-router-dom";
 import RestaurantMenu from "./components/RestaurantMenu";
 import UserContext from "./utils/UserContext";
+import { Provider } from "react-redux";
+import appStore from "./utils/appstore";
 // import Grocery from "./components/Grocery";
 
 // lazy loading
@@ -26,12 +28,14 @@ function App() {
   }, []);
   return (
     <>
-      <UserContext.Provider value={{ loggedUser: userName, setUserName }}>
-        <div className="">
-          <Header />
-          <Outlet />
-        </div>
-      </UserContext.Provider>
+      <Provider store={appStore}>
+        <UserContext.Provider value={{ loggedUser: userName, setUserName }}>
+          <div className="">
+            <Header />
+            <Outlet />
+          </div>
+        </UserContext.Provider>
+      </Provider>
     </>
   );
 }
