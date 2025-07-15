@@ -15,7 +15,7 @@ const Header = () => {
   // subscribing the store
   const items = useSelector((state) => state.cart.items);
 
-  // console.log(items);
+  console.log(items);
 
   return (
     <div className="header flex shadow-md px-5">
@@ -53,7 +53,9 @@ const Header = () => {
           <li className="mr-7">
             <Link to="/grocery">Grocery-App</Link>
           </li>
-          <li className="mr-7 font-bold">Cart ({items.length} - Items)</li>
+          <li className="mr-7 font-bold">
+            <Link to={"/cart"}> Cart ({items.length} - Items)</Link>
+          </li>
           <li>
             <button
               className="bg-gray-800 hover:bg-gray-900 text-white font-semibold py-1 px-4 rounded-lg shadow-md transition duration-300 ease-in-out cursor-pointer"

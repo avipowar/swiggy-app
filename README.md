@@ -156,3 +156,13 @@ Swiggy-app
 - Then provide store to our application
 - using PROVIDER we provide store to our application
 - We create logical separation and we will make small slices inside your redux-store
+
+  # useSelector
+
+  - we subscribe to the store using useSelector
+  - we get the data from the store using useSelector
+
+  # useDispatch
+
+  - for dispatching the action we use useDispatch
+  - this useDispatch take action as argument and create object and inside that object add payload and add the value inside payload and send the second parameter to the redux store

@@ -2,12 +2,20 @@
 import React from "react";
 import ItemList from "./ItemList";
 import { ORDER_URL } from "../utils/constants";
+import { useDispatch } from "react-redux";
+import { addItem } from "../utils/cartSlice";
 
 const CategoryList = ({ data, className }) => {
-  // console.log(data.card.info.offerTags[0]);
-  // const { subTitle, title } = data.card.info.offerTags[0];
-  // eslint-disable-next-line no-unsafe-optional-chaining
-  const { name, price, defaultPrice, description, imageId } = data?.card?.info;
+  // console.log(data);
+  const { name, price, defaultPrice, description, imageId } = data?.info;
+
+  const dispatch = useDispatch();
+  // console.log(dispatch);
+
+  const handleClick = (item) => {
+    dispatch(addItem(item));
+  };
+
   return (
     <div className="border-b-1 flex justify-between border-b-gray-300 w-full mb-3 mt-3">
       {/* <div className="flex w-8/12   my-4"> */}
@@ -30,7 +38,12 @@ const CategoryList = ({ data, className }) => {
             src={ORDER_URL + imageId}
             alt="order-img"
           />
-          <button className="absolute bottom-2 ml-8  px-10 py-2 bg-white text-green-500 font-semibold border border-gray-300 rounded-2xl cursor-pointer hover:bg-gray-100 ">
+          <button
+            className="absolute bottom-2 ml-8  px-10 py-2 bg-white text-green-500 font-semibold border border-gray-300 rounded-2xl cursor-pointer hover:bg-gray-100 "
+            onClick={() => {
+              handleClick(data);
+            }}
+          >
             Add
           </button>
         </div>

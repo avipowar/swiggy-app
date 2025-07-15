@@ -32,7 +32,7 @@ const DisplayCategory = ({ data, showItem, setShowIndex }) => {
                   : ""
               }`}
               key={index}
-              data={c}
+              data={c.card}
             />
           ))}
       </div>
